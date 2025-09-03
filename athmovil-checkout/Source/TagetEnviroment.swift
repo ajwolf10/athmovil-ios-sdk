@@ -9,7 +9,6 @@
 import Foundation
 
 enum TargetEnviroment: String, CaseIterable {
-    
     case production
     
     static var selectedEnviroment: TargetEnviroment = .production
@@ -40,8 +39,10 @@ extension TargetEnviroment {
         return "https://athmovil-ios.web.app/e-commerce"
     }
     
-    func client(currentRequest: PaymentRequestable) -> APIClientRequestable {
-        return APIPayments.api
+    func client(
+        currentRequest: PaymentRequestable
+    ) -> APIClientRequestable {
+        return APIPayments.apiAWS
     }
     
     func client(
